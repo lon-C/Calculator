@@ -22,4 +22,12 @@ function operate(a, action, b) {
     return action(a, b);
 };
 
-console.log(operate(firstNumber, operator, secondNumber));
+let display = document.querySelector('.display');
+const container = document.querySelector('.container');
+let onscreen = [];
+
+container.addEventListener("click", (event) => {
+    onscreen += event.target.textContent;
+    display.textContent = onscreen;
+    console.log(onscreen);
+});
